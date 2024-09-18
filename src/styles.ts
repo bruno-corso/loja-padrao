@@ -21,6 +21,7 @@ export const GlobalCss = createGlobalStyle`
         background-color: ${cores.background};
         color: ${cores.textPrimary};
         height: 4000px;
+        font-family: 'Roboto';
     }
 `
 

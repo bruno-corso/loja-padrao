@@ -13,6 +13,7 @@ const NavBarSC = styled(Navbar)`
   position: fixed;
   top: 28px;
   width: 100%;
+  z-index: 10;
 `
 
 const BrandSC = styled(Navbar.Brand)`
@@ -21,7 +22,7 @@ const BrandSC = styled(Navbar.Brand)`
 `
 
 const LinkSC = styled(Nav.Link)`
-  font-weight: 100;
+  font-weight: 300;
   color: ${cores.textPrimary};
   text-transform: uppercase;
 `
@@ -41,6 +42,19 @@ const ContainerSC = styled(Container)`
   flex-direction: ${({ scroll }) => (scroll > 150 ? 'row' : 'column')};
   @media (max-width: 767px) {
     flex-direction: row;
+  }
+`
+
+const NavDropdownSC = styled(NavDropdown)`
+  font-weight: 300;
+  .dropdown-menu {
+    border-radius: 0;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+  }
+  a {
+    color: ${cores.textPrimary};
   }
 `
 
@@ -79,13 +93,13 @@ function Header() {
             <LinkSC href="#iteM2">iteM 2</LinkSC>
             <LinkSC href="#iteM3">iteM 3</LinkSC>
             <LinkSC href="#iteM4">iteM 4</LinkSC>
-            <NavDropdown title="SEÇÃO" id="basic-nav-dropdown">
+            <NavDropdownSC title="SEÇÃO" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">valor 1</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">valor 2</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">valor 3</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">valor 4</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdownSC>
           </NavSC>
         </Navbar.Collapse>
       </ContainerSC>
